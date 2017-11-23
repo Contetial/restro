@@ -1,0 +1,32 @@
+{
+  "loggedInUser" : {},
+  "filters": [
+    {"locality" : ""},
+    {"rating" : ""}
+  ],
+  "restros" : [
+    {"restro1" : {}},
+    {"restro2" : {
+        "restroDetails": {
+          "name" : "",
+          "address" : "",
+          "avgRating" : "",
+          "images" : []
+        },
+        "comments" : [
+            {"comment1" : {}, "user":{}},
+            {"comment2" : {}, "user":{}}
+          ]
+      }
+    }
+  ],
+  "userQueries" : [
+    {"query1" : "", 
+    "relatedRestros":[], 
+    "user1":{}, 
+    "responses":[
+        {"response1" : {}, "user":{}},
+        {"response2" : {}, "user":{}}
+      ]}
+  ]
+}
