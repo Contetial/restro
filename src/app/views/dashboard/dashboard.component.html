@@ -1,0 +1,45 @@
+<div class="container">
+
+  <!-- Static navbar -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" >Hotel California</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <!--<li class="active"><a>Home</a></li>
+          <li><a>About</a></li>
+          <li><a>Contact</a></li>-->
+        </ul>
+        
+      </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+  </nav>
+
+  <!-- Main component for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <h1>Welcome to Hotel California</h1>
+    <p>Book a table here</p>
+    
+      <div class="form-group"> <!-- Date input -->
+        <label class="control-label" for="date">Date</label>
+        <input class="form-control" #mydate type="date" />
+      </div>
+      <div class="form-group"> <!-- Date input -->
+        <label class="control-label" for="ppl">No of Persons</label>
+        <input placeholder="2" #myppl class="form-control" id="ppl" type="number" />
+      </div>
+      
+        <p>
+            <a (click)="bookTable(mydate.value, myppl.value)" class="btn btn-lg btn-primary"  role="button">Book</a>
+        </p>
+  </div>
+
+</div> <!-- /container -->
