@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database-deprecated';
 import { WindowService } from '../../service/window.service';
+import { AF } from '../../providers/af';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
@@ -36,12 +37,8 @@ windowRef: any;
   verificationCode: string;
   user: any;
   
-  constructor(private router: Router, public afAuth: AngularFireAuth, public af: AngularFireDatabase, private win: WindowService) {
-  this.items = af.list('/messages', {
-      query: {
-        limitToLast: 50
-      }
-    });
+  constructor(private router: Router, public afAuth: AngularFireAuth, public af: AngularFireDatabase, private win: WindowService, private myAuth: AF) {
+  
 
     this.user = this.afAuth.authState;
   };
@@ -52,20 +49,23 @@ windowRef: any;
   'size': 'invisible',
 });
     this.windowRef.recaptchaVerifier.render();
+    
   };
   
   sendLoginCode() {
   
   console.log("here1");
-    
-
+    this.myAuth.loginWithNum(this.phoneNumber.e164, this.windowRef);
+/*
     const num = this.phoneNumber.e164;
+   // this.windowRef = this.win.windowRef;
     firebase.auth().signInWithPhoneNumber(num, this.windowRef.recaptchaVerifier)
             .then(result => {
                 this.windowRef.confirmationResult = result;
                 
             })
             .catch( error => console.log(error) );
+            */
    // const appVerifier = this.windowRef.recaptchaVerifier;
     
   }

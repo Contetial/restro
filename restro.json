@@ -1,0 +1,36 @@
+{
+  "hotel" : {
+    "description" : "Dummy Description",
+    "name" : "Hotel California",
+    "tables": {
+   "1" : {
+       "minCapacity":2,
+       "capacity" : 4,
+       "bookinginfo":{
+                        "d1":
+                            {
+                                "1":{"name":"ABC DEF", "mob":"9967307515"},
+                                "2":{"name":"ABC DEF", "mob":"9967307514"},
+                                "3":{"name":"ABC DEF", "mob":"9967307513"}
+                            },
+                        "d2":
+                            {
+                                "1":{"name":"", "mob":""},
+                                "2":{"name":"", "mob":""}
+                            }
+                     }
+     
+   },
+   "2" : {
+     "minCapacity":2,
+     "capacity" : 6,
+     "booked" : "true"
+   },
+   "3" : {
+     "minCapacity":4,
+     "capacity" : 8,
+     "booked" : "true"
+   }
+ }
+  }
+}

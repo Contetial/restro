@@ -20,6 +20,7 @@ import { LoginComponent } from './views/login/login.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { UserprofileComponent } from './views/userprofile/userprofile.component';
 import { WindowService } from './service/window.service';
+import { AF } from './providers/af';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCRCdZGuk2QuQ2nArHASO3_BKvVzYvl60w",
@@ -48,7 +49,7 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     AppRoutes
   ],
-  providers: [AngularFireAuth, AngularFireDatabase, WindowService],
+  providers: [AngularFireAuth, AngularFireDatabase, WindowService,AF],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
