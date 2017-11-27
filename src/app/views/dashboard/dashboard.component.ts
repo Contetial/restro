@@ -10,6 +10,7 @@ import { Observable } from 'rxjs/Observable';
 export class DashboardComponent implements OnInit {
     tables: Observable<any[]>;
     myarr: any[];
+    test: any ;
   constructor(private af1: AngularFireDatabase) {
   // get the table data here
   
@@ -17,15 +18,20 @@ export class DashboardComponent implements OnInit {
   
   this.getTables().subscribe(t=>{
   console.log(t);
-  this.myarr=t;
+  //this.myarr=t[0].bookinginfo.d1;
+  //console.log(this.myarr);
+  console.log(t[1]);
+  this.test = t[1];
+  
+  
   });
-  //console.log(this.tables);
+  //console.log(this.tables[0]/bookingInfo/d1);
   };
 
 
 getTables()
 {
-    return this.af1.list('hotel/tables').valueChanges();
+    return this.af1.list('hotel').valueChanges();
 }
 
 
@@ -38,7 +44,7 @@ bookTable(md: string, mppl: number)
         if(mppl < this.myarr[i].capacity)
         {
             alert("Table booked");
-            this.af1.list('hotel/tables').push({
+            this.af1.list('hotel/tables/1/bookinginfo').push({
      "minCapacity":4,
      "capacity" : 8,
      "booked" : "true"
